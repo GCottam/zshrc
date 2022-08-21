@@ -108,16 +108,18 @@ source $ZSH/oh-my-zsh.sh
 
 RCinstall() {
 	cd ~
-	git clone https://github.com/GlennCottam/zshrc.git
+	git clone https://github.com/GlennCottam/zshrc.git .zshrc
+	cp .zshrc/* ~/
 }
 
 RCupdate() {
-	cd ~
+	cd ~/.zshrc/
 	git pull origin main
+	cp .zshrc/* ~/
 }
 
 RCreset() {
-	cd ~
+	cd ~/.zshrc/
 	git fetch --all
 	git reset --hard origin/master
 	source "./zshrc"
