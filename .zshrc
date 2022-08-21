@@ -108,21 +108,21 @@ source $ZSH/oh-my-zsh.sh
 
 RCinstall() {
 	cd ~
-	git clone https://github.com/GlennCottam/zshrc.git .zshrc
-	cp .zshrc/* ~/
+	git clone https://github.com/GlennCottam/zshrc.git .zsh
+	cp .zsh/* ~/
 }
 
 RCupdate() {
 	cd ~/.zshrc/
 	git pull origin main
-	cp .zshrc/* ~/
+	cp .zsh/* ~/
 }
 
 RCreset() {
 	cd ~/.zshrc/
 	git fetch --all
 	git reset --hard origin/master
-	source "./zshrc"
+	source "./zsh"
 }
 
 # Traceroute: NMAP must be installed
