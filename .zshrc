@@ -115,20 +115,20 @@ RCCopy() {
 RCinstall() {
 	cd ~
 	git clone https://github.com/GlennCottam/zshrc.git .zsh
-	RCCopy()
+	RCCopy
 }
 
 RCupdate() {
 	cd ~/.zsh/
 	git pull origin main
-	RCCopy()
+	RCCopy
 }
 
 RCreset() {
 	cd ~/.zsh/
 	git fetch --all
 	git reset --hard origin/master
-	RCCopy()
+	RCCopy
 	cd ~
 	source "./zshrc"
 }
