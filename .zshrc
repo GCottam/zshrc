@@ -246,6 +246,8 @@ alias ppa='$isroot add-apt-repository'
 alias root='$isroot -i'
 alias install='$isroot apt install -y'
 
+alias dhcprenew='dhcpclient -r & ifconfig'
+
 # Dependencies
 # - Lynx
 # - Screenfetch
