@@ -255,7 +255,7 @@ export LS_COLORS=$LS_COLORS:"*.wmv=01;35":"*.wma=01;35":"*.flv=01;35":"*.m4a=01;
 # Alias' have been created for Ubuntu / Debian
 # The proper packages will need to be installed for some to work
 #Alias'
-alias restart='clear && source ${bashrc}'
+alias reload='clear && source ${bashrc}'
 alias update='$isroot apt update && $isroot apt upgrade -y'
 alias py='clear && python3'
 alias back='cd ..'
