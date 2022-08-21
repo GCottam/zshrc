@@ -106,6 +106,23 @@ source $ZSH/oh-my-zsh.sh
 
 # Programs
 
+RCinstall() {
+	cd ~
+	git clone https://github.com/GlennCottam/zshrc.git
+}
+
+RCupdate() {
+	cd ~
+	git pull origin main
+}
+
+RCreset() {
+	cd ~
+	git fetch --all
+	git reset --hard origin/master
+	source "./zshrc"
+}
+
 # Traceroute: NMAP must be installed
 traceroute() {
 	sudo nmap -sn --traceroute $1
