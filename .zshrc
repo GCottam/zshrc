@@ -106,23 +106,31 @@ source $ZSH/oh-my-zsh.sh
 
 # Programs
 
+RCCopy() {
+	cd ~
+	cp -uvr .zsh/.config/ ~/.config/
+	cp -uvr .zsh/.zshrc ~/.zshrc
+}
+
 RCinstall() {
 	cd ~
 	git clone https://github.com/GlennCottam/zshrc.git .zsh
-	cp .zsh/* ~/
+	RCCopy()
 }
 
 RCupdate() {
 	cd ~/.zshrc/
 	git pull origin main
-	cp .zsh/* ~/
+	RCCopy()
 }
 
 RCreset() {
 	cd ~/.zshrc/
 	git fetch --all
 	git reset --hard origin/master
-	source "./zsh"
+	RCCopy()
+	cd ~
+	source "./zshrc"
 }
 
 # Traceroute: NMAP must be installed
