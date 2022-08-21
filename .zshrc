@@ -119,13 +119,13 @@ RCinstall() {
 }
 
 RCupdate() {
-	cd ~/.zshrc/
+	cd ~/.zsh/
 	git pull origin main
 	RCCopy()
 }
 
 RCreset() {
-	cd ~/.zshrc/
+	cd ~/.zsh/
 	git fetch --all
 	git reset --hard origin/master
 	RCCopy()
