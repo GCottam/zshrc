@@ -116,12 +116,14 @@ RCinstall() {
 	cd ~
 	git clone https://github.com/GlennCottam/zshrc.git .zsh
 	RCCopy
+	reload
 }
 
 RCupdate() {
 	cd ~/.zsh/
 	git pull origin main
 	RCCopy
+	reload
 }
 
 RCreset() {
@@ -130,7 +132,7 @@ RCreset() {
 	git reset --hard origin/master
 	RCCopy
 	cd ~
-	source "./zshrc"
+	reload
 }
 
 # Traceroute: NMAP must be installed
@@ -283,7 +285,7 @@ alias dhcprenew='dhcpclient -r & ifconfig'
 # - Lolcat
 
 # Startup Applications
-
+screenfetch
 toilet -t -f smblock $HOST
 
 # Fonts:
