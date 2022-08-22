@@ -314,8 +314,9 @@ alias dhcprenew='dhcpclient -r & ifconfig'
 # - Lolcat
 
 # Startup Applications
-screenfetch
 toilet -t -f smblock $HOST
+screenfetch
+
 
 # Fonts:
 # ascii12.tlf     bigascii9.tlf  circle.tlf   future.tlf  mono9.tlf      smascii9.tlf   smmono12.tlf
