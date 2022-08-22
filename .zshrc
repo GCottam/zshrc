@@ -308,7 +308,7 @@ alias install='$isroot apt install -y'
 alias dhcprenew='dhcpclient -r & ifconfig'
 
 # Toilet Info
-toilet_fonts='ls /usr/share/figlet'
+alias toilet_fonts='ls /usr/share/figlet'
 
 # Dependencies
 # - Lynx
