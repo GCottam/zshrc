@@ -318,7 +318,7 @@ alias toilet_fonts='ls /usr/share/figlet'
 # - Lolcat
 
 # Startup Applications
-toilet -t -f smblock $USER@$HOST
+toilet -t -f mono12 $USER@$HOST
 screenfetch
 
 
