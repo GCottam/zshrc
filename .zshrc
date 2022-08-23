@@ -226,6 +226,10 @@ weather() {
 	curl http://wttr.in
 }
 
+watch_weather() {
+	watch -n 60 "curl http://wttr.in"
+}
+
 
 # Compressed Extractor
 # Got this oneline from someone else. Uncompresses various file types automatically
