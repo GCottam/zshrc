@@ -227,7 +227,7 @@ weather() {
 }
 
 watch_weather() {
-	watch -n 60 "curl http://wttr.in"
+	watch -c -n 60 "curl http://wttr.in"
 }
 
 
