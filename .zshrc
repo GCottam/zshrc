@@ -106,6 +106,8 @@ source $ZSH/oh-my-zsh.sh
 
 # Programs
 
+alias reload='clear && source ${bashrc}'
+
 RCCopy() {
 	cd ~
 	cp -uvr .zsh/.config/ ~/.config/
@@ -299,7 +301,6 @@ export LS_COLORS=$LS_COLORS:"*.wmv=01;35":"*.wma=01;35":"*.flv=01;35":"*.m4a=01;
 # The proper packages will need to be installed for some to work
 #Alias'
 alias ls='ls -la'
-alias reload='clear && source ${bashrc}'
 alias update='$isroot apt update && $isroot apt upgrade -y'
 alias py='clear && python3'
 alias back='cd ..'
