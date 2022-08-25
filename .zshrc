@@ -310,6 +310,7 @@ alias ppa='$isroot add-apt-repository'
 alias root='$isroot -i'
 alias install='$isroot apt install -y'
 alias openports='netstat -lntu'
+alias diskuse='ncdu -x -q'
 
 alias dhcprenew='dhcpclient -r & ifconfig'
 
