@@ -314,6 +314,12 @@ alias diskuse='ncdu -x -q'
 
 alias dhcprenew='dhcpclient -r & ifconfig'
 
+# Service Control
+alias service_disable='$isroot systemctl disable --now'
+alias service_enable='$isroot systemctl enable --now'
+alias service_status='$isroot systemctl list-unit-files --type=service'
+alias service_enabled='$isroot systemctl list-unit-files --type=service --status=enabled'
+
 # Toilet Info
 alias toilet_fonts='ls /usr/share/figlet'
 
