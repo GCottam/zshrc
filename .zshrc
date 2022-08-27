@@ -324,6 +324,9 @@ alias service_enabled='$isroot systemctl list-unit-files --type=service --state=
 # Toilet Info
 alias toilet_fonts='ls /usr/share/figlet'
 
+# temps
+alias thermals='paste <(cat /sys/class/thermal/thermal_zone*/type) <(cat /sys/class/thermal/thermal_zone*/temp) | column -s $'\t' -t | sed 's/\(.\)..$/.\1°C/''
+
 # Dependencies
 # - Lynx
 # - Screenfetch
