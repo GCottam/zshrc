@@ -243,7 +243,7 @@ status() {
 }
 
 sysmon() {
-	watch -n 1 status
+	watch -n 1 $(status)
 }
 
 
