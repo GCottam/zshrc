@@ -33,7 +33,7 @@ RCinstall() {
 	cd ~
 	git clone https://github.com/GlennCottam/zshrc.git .zsh
 	RCCopy
-	reload
+	source .zshrc
 }
 
 RCupdate() {
