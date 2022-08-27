@@ -232,22 +232,7 @@ watch_weather() {
 	watch -c -n 60 "curl http://wttr.in"
 }
 
-status() {
-# 	Credit: https://leo3418.github.io/2021/02/09/linux-cpu-freq-temp-mon-script.html
-	uname -p
-	lscpu | grep "Model name"
-	grep --color=never 'cpu MHz' /proc/cpuinfo
-	cpu_temp=$(($(cat /sys/class/thermal/thermal_zone0/temp) / 1000))
-	echo "cpu temperature : ${cpu_temp}℃"
-}
-
-sysmon() {
-# 	while true; do
-# 		echo $(status)
-# 		sleep 1
-# 	done
-	watch -dx -n 0.5 echo $(status)
-}
+alias sysmon='watch -n 0.5 ~/.zsh/.scripts/sys_status.sh'
 
 
 # Compressed Extractor
