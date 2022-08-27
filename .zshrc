@@ -43,6 +43,12 @@ RCupdate() {
 	reload
 }
 
+RCupdate_debug() {
+	cd ~/.zsh/
+	git pull origin main
+	RCCopy
+}
+
 RCreset() {
 	cd ~/.zsh/
 	git fetch --all
