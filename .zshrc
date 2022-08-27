@@ -110,6 +110,8 @@ alias reload='clear && source ${bashrc}'
 RCCopy() {
 	cd ~
 	cp -uvr .zsh/.config/ ~/.config/
+	chmod -r +x .zsh/.scripts/*
+	cp -uvr .zsh/.scripts ~/.scripts/
 	cp -uvr .zsh/.zshrc ~/.zshrc
 }
 
@@ -232,7 +234,7 @@ watch_weather() {
 	watch -c -n 60 "curl http://wttr.in"
 }
 
-alias sysmon='watch -n 0.5 ~/.zsh/.scripts/sys_status.sh'
+alias sysmon='watch -n 0.5 ~/.scripts/sys_status.sh'
 
 
 # Compressed Extractor
