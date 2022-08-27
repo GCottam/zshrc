@@ -243,8 +243,10 @@ status() {
 }
 
 sysmon() {
-	get_status=$(status)
-	watch -n 1 echo '$get_status'
+	while true; do
+		$(status)
+		sleep 1
+	done
 }
 
 
