@@ -103,7 +103,6 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
 # Programs
 
 alias reload='clear && source ${bashrc}'
@@ -247,7 +246,7 @@ sysmon() {
 # 		echo $(status)
 # 		sleep 1
 # 	done
-	watch status
+	watch -dx -n 0.5 echo $(status)
 }
 
 
