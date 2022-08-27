@@ -225,6 +225,7 @@ export LS_COLORS=$LS_COLORS:"*.wmv=01;35":"*.wma=01;35":"*.flv=01;35":"*.m4a=01;
 # The proper packages will need to be installed for some to work
 #Alias'
 alias ls='ls -la'
+alais rmr='rm -r'
 alias update='$isroot apt update && $isroot apt upgrade -y && RCupdate'
 alias py='clear && python3'
 alias back='cd ..'
@@ -235,6 +236,7 @@ alias root='$isroot -i'
 alias install='$isroot apt install -y'
 alias openports='netstat -lntu'
 alias diskuse='ncdu -x -q'
+
 
 alias dhcprenew='dhcpclient -r & ifconfig'
 
