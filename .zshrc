@@ -111,7 +111,7 @@ RCCopy() {
 	cd ~
 	cp -uvr .zsh/.config/ ~/.config/
 	chmod -r +x .zsh/.scripts/*
-	cp -uvr .zsh/.scripts ~/.scripts/
+	cp -uvr .zsh/.scripts/ ~/.scripts/
 	cp -uvr .zsh/.zshrc ~/.zshrc
 }
 
