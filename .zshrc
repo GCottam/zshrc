@@ -244,7 +244,7 @@ status() {
 
 sysmon() {
 	while true; do
-		$(status)
+		echo '$(status)'
 		sleep 1
 	done
 }
