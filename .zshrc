@@ -244,7 +244,7 @@ status() {
 
 sysmon() {
 	get_status=$(status)
-	watch -n 1 echo "$get_status"
+	watch -n 1 echo '$get_status'
 }
 
 
