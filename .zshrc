@@ -24,7 +24,7 @@ alias reload='clear; source ~/${bashrc}'
 RCCopy() {
 	cd ~
 	cp -uvr .zsh/.config/ ./
-	chmod -r +x .zsh/.scripts/*
+	chmod -r +rwx .zsh/.scripts/*
 	cp -uvr .zsh/.scripts/ ./
 	cp -uvr .zsh/.zshrc ~/.zshrc
 }
