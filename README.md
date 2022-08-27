@@ -18,4 +18,6 @@ I am hoping in the future to create a simple install script I can copy and paste
 - curl
 - tar
 - git
+- hddtemp
+- lm-sensors
 - (optional) lolcat
