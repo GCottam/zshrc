@@ -233,6 +233,13 @@ watch_weather() {
 	watch -c -n 60 "curl http://wttr.in"
 }
 
+sysmon() {
+# 	Credit: https://leo3418.github.io/2021/02/09/linux-cpu-freq-temp-mon-script.html
+	grep 'cpu MHz' /proc/cpuinfo
+	cat /sys/class/thermal/thermal_zone0/temp
+	echo $(($(cat /sys/class/thermal/thermal_zone0/temp) / 1000))
+}
+
 
 # Compressed Extractor
 # Got this oneline from someone else. Uncompresses various file types automatically
@@ -323,9 +330,6 @@ alias service_enabled='$isroot systemctl list-unit-files --type=service --state=
 
 # Toilet Info
 alias toilet_fonts='ls /usr/share/figlet'
-
-# temps
-alias thermals='paste <(cat /sys/class/thermal/thermal_zone*/type) <(cat /sys/class/thermal/thermal_zone*/temp) | column -s $'\t' -t | sed 's/\(.\)..$/.\1°C/''
 
 # Dependencies
 # - Lynx
