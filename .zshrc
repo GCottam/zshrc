@@ -220,7 +220,8 @@ createScript()
 # Creates tarball using a specific specification
 tarball()
 {
-  tar -zcf $1.tgz $1
+  # tar zcf $1.tgz $1
+  tar cjf $1.tar.bz $2
   ls
 }
 
