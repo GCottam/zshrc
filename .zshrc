@@ -221,7 +221,7 @@ createScript()
 tarball()
 {
   # tar zcf $1.tgz $1
-  tar cjf $1.tar.bz $2
+  tar xjf $1.tar.bz2 --directory $2 --same-permissions
   ls
 }
 
