@@ -235,9 +235,9 @@ watch_weather() {
 
 sysmon() {
 # 	Credit: https://leo3418.github.io/2021/02/09/linux-cpu-freq-temp-mon-script.html
-	grep 'cpu MHz' /proc/cpuinfo
-	cat /sys/class/thermal/thermal_zone0/temp
-	echo $(($(cat /sys/class/thermal/thermal_zone0/temp) / 1000))
+	grep --color=never 'cpu MHz' /proc/cpuinfo
+	cpu_temp=$(($(cat /sys/class/thermal/thermal_zone0/temp) / 1000))
+	echo "cpu temperature : ${cpu_temp}"
 }
 
 
