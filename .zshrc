@@ -243,7 +243,8 @@ status() {
 }
 
 sysmon() {
-	watch -n 1 echo "$(status)"
+	status=$(status)
+	watch -n 1 echo "$status"
 }
 
 
