@@ -243,10 +243,11 @@ status() {
 }
 
 sysmon() {
-	while true; do
-		echo $(status)
-		sleep 1
-	done
+# 	while true; do
+# 		echo $(status)
+# 		sleep 1
+# 	done
+	watch status
 }
 
 
