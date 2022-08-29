@@ -4,6 +4,7 @@
 # Config
 bashrc=".zshrc"
 isroot="sudo"
+pkg_mgr="apt"
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -226,14 +227,14 @@ export LS_COLORS=$LS_COLORS:"*.wmv=01;35":"*.wma=01;35":"*.flv=01;35":"*.m4a=01;
 #Alias'
 alias ls='ls -la'
 alias rmr='rm -r'
-alias update='$isroot apt update && $isroot apt upgrade -y && RCupdate'
+alias update='$isroot $pkg_mgr update && $isroot $pkg_mgr upgrade -y && RCupdate'
 alias py='clear && python3'
 alias back='cd ..'
 alias home='cd ~/ && clear && source $bashrc'
 alias svim='$isroot vim'
 alias ppa='$isroot add-apt-repository'
 alias root='$isroot -i'
-alias install='$isroot apt install -y'
+alias install='$isroot $pkg_mgr install -y'
 alias openports='netstat -lntu'
 alias diskuse='ncdu -x -q /'
 
