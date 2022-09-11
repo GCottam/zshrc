@@ -20,7 +20,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Programs
 
-alias reload='clear; source ~/${bashrc}'
+alias reload='source ~/${bashrc}'
 
 RCCopy() {
 	cd ~
@@ -31,6 +31,7 @@ RCCopy() {
 }
 
 RCinstall() {
+	toilet -t -f smascii9 "Installing ZSHRC"
 	cd ~
 	git clone https://github.com/GlennCottam/zshrc.git .zsh
 	RCCopy
@@ -38,19 +39,15 @@ RCinstall() {
 }
 
 RCupdate() {
+	toilet -t -f smascii9 "Updating ZSHRC"
 	cd ~/.zsh/
 	git pull origin main
 	RCCopy
 	reload
 }
 
-RCupdate_debug() {
-	cd ~/.zsh/
-	git pull origin main
-	RCCopy
-}
-
 RCreset() {
+	toilet -t -f smascii9 "Resetting ZSHRC to git version"
 	cd ~/.zsh/
 	git fetch --all
 	git reset --hard origin/master
@@ -61,11 +58,13 @@ RCreset() {
 
 # Portianer script
 PORTrun() {
+	toilet -t -f smascii9 "Running Portainer"
 	docker run -d -p 8000:8000 -p 9443:9443 --name portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce:latest
 	docker ps
 }
 
 PORTAgent() {
+	toilet -t -f smascii9 "Installing and running Portainer Agent"
 	docker network create \
 	--driver overlay \
 	  portainer_agent_network
@@ -90,12 +89,13 @@ PORTAgent() {
 
 # Traceroute: NMAP must be installed
 traceroute() {
+	toilet -t -f smascii9 "Running Traceroute on: $1"
 	sudo nmap -sn --traceroute $1
 }
 
 # Stupid little hack program I made (does nothing)
 hack() {
-  echo "Starting Hack..."
+  toilet -t -f smascii9 "Starting Hack..."
   sleep 1
   while [ 1 -eq 1 ]
   do
@@ -105,11 +105,13 @@ hack() {
 }
 
 installOMZ() {
+	toilet -t -f smascii9 "Installing Oh-My-ZSH"
 	sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 }
 
 # Service Adjustment
 ServiceRestart() {
+	toilet -t -f smascii9 "Restarting Service $1"
 	$isroot service $1 restart && $isroot service status
 }
 
@@ -130,6 +132,7 @@ toiletExport() {
 
 # Lists open ports of current machine
 ListOpenPorts() {
+	toilet -t -f smascii9 "Open Ports"
 	netstat -lntu
 }
 
@@ -195,7 +198,7 @@ export LESS_TERMCAP_us=$'\E[01;32m'
 #netinfo - shows network information for your system
 netinfo ()
 {
-echo "--------------- Network Information ---------------"
+toilet -t -f smascii9 "--------------- Network Information ---------------"
 /sbin/ifconfig | awk /'inet addr/ {print $2}'
 /sbin/ifconfig | awk /'Bcast/ {print $3}'
 /sbin/ifconfig | awk /'inet addr/ {print $4}'
@@ -203,7 +206,7 @@ echo "--------------- Network Information ---------------"
 ifconfig | grep inet
 myip=`lynx -dump -hiddenlinks=ignore -nolist http://checkip.dyndns.org:8245/ | sed '/^$/d; s/^[ ]*//g; s/[ ]*$//g' `
 echo "${myip}"
-echo "---------------------------------------------------"
+toilet -t -f smascii9 "---------------------------------------------------"
 }
 
 #dirsize - finds directory sizes and lists them for the current directory
