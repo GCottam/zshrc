@@ -5,6 +5,7 @@
 bashrc=".zshrc"
 isroot="sudo"
 pkg_mgr="apt"
+toiletfont="smmono9"
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -31,7 +32,7 @@ RCCopy() {
 }
 
 RCinstall() {
-	toilet -t -f smascii9 "Installing ZSHRC"
+	toilet -t -f $toiletfont "Installing ZSHRC"
 	cd ~
 	git clone https://github.com/GlennCottam/zshrc.git .zsh
 	RCCopy
@@ -39,7 +40,7 @@ RCinstall() {
 }
 
 RCupdate() {
-	toilet -t -f smascii9 "Updating ZSHRC"
+	toilet -t -f $toiletfont "Updating ZSHRC"
 	cd ~/.zsh/
 	git pull origin main
 	RCCopy
@@ -47,7 +48,7 @@ RCupdate() {
 }
 
 RCreset() {
-	toilet -t -f smascii9 "Resetting ZSHRC to git version"
+	toilet -t -f $toiletfont "Resetting ZSHRC to git version"
 	cd ~/.zsh/
 	git reset --hard HEAD
 	RCCopy
@@ -57,13 +58,13 @@ RCreset() {
 
 # Portianer script
 PORTrun() {
-	toilet -t -f smascii9 "Running Portainer"
+	toilet -t -f $toiletfont "Running Portainer"
 	docker run -d -p 8000:8000 -p 9443:9443 --name portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce:latest
 	docker ps
 }
 
 PORTAgent() {
-	toilet -t -f smascii9 "Installing and running Portainer Agent"
+	toilet -t -f $toiletfont "Installing and running Portainer Agent"
 	docker network create \
 	--driver overlay \
 	  portainer_agent_network
@@ -88,13 +89,13 @@ PORTAgent() {
 
 # Traceroute: NMAP must be installed
 traceroute() {
-	toilet -t -f smascii9 "Running Traceroute on: $1"
+	toilet -t -f $toiletfont "Running Traceroute on: $1"
 	sudo nmap -sn --traceroute $1
 }
 
 # Stupid little hack program I made (does nothing)
 hack() {
-  toilet -t -f smascii9 "Starting Hack..."
+  toilet -t -f $toiletfont "Starting Hack..."
   sleep 1
   while [ 1 -eq 1 ]
   do
@@ -104,13 +105,13 @@ hack() {
 }
 
 installOMZ() {
-	toilet -t -f smascii9 "Installing Oh-My-ZSH"
+	toilet -t -f $toiletfont "Installing Oh-My-ZSH"
 	sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 }
 
 # Service Adjustment
 ServiceRestart() {
-	toilet -t -f smascii9 "Restarting Service $1"
+	toilet -t -f $toiletfont "Restarting Service $1"
 	$isroot service $1 restart && $isroot service status
 }
 
@@ -131,7 +132,7 @@ toiletExport() {
 
 # Lists open ports of current machine
 ListOpenPorts() {
-	toilet -t -f smascii9 "Open Ports"
+	toilet -t -f $toiletfont "Open Ports"
 	netstat -lntu
 }
 
@@ -197,7 +198,7 @@ export LESS_TERMCAP_us=$'\E[01;32m'
 #netinfo - shows network information for your system
 netinfo ()
 {
-toilet -t -f smascii9 "--------------- Network Information ---------------"
+toilet -t -f $toiletfont "--------------- Network Information ---------------"
 /sbin/ifconfig | awk /'inet addr/ {print $2}'
 /sbin/ifconfig | awk /'Bcast/ {print $3}'
 /sbin/ifconfig | awk /'inet addr/ {print $4}'
@@ -205,7 +206,7 @@ toilet -t -f smascii9 "--------------- Network Information ---------------"
 ifconfig | grep inet
 myip=`lynx -dump -hiddenlinks=ignore -nolist http://checkip.dyndns.org:8245/ | sed '/^$/d; s/^[ ]*//g; s/[ ]*$//g' `
 echo "${myip}"
-toilet -t -f smascii9 "---------------------------------------------------"
+toilet -t -f $toiletfont "---------------------------------------------------"
 }
 
 #dirsize - finds directory sizes and lists them for the current directory
