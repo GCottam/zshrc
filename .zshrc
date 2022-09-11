@@ -49,8 +49,7 @@ RCupdate() {
 RCreset() {
 	toilet -t -f smascii9 "Resetting ZSHRC to git version"
 	cd ~/.zsh/
-	git fetch --all
-	git reset --hard origin/master
+	git reset --hard HEAD
 	RCCopy
 	cd ~
 	reload
