@@ -89,7 +89,8 @@ PORTAgent() {
 # Diff 2 HTML
 # Finds the difference between 2 files, and creates a file to easily view them.
 diff2html() {
-	toilet -t -f $toiletfont "Find Differences..."
+	toilet -t -f $toiletfont "DIFF2HTML..."
+	echo "Finding Differences between $1, and $2"
 	diff --color=always -y $1 $2 | aha --black --title "DIFF $1, $2" > diff.html
 }
 
