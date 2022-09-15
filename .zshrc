@@ -264,6 +264,7 @@ alias toilet_fonts='ls /usr/share/figlet'
 # - Screenfetch
 # - Toilet
 # - Lolcat
+# - aha
 
 # Startup Applications
 toilet -t -f future $USER@$HOST
