@@ -10,7 +10,10 @@ toiletfont="smmono9"
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 # ZSH Theme
-ZSH_THEME="agnoster"
+ZSH_THEME="danker"
+
+# Auto Update:
+zstyle ':omz:update' mode auto
 
 # Plugins
 plugins=(git)
@@ -63,28 +66,6 @@ PORTrun() {
 	docker ps
 }
 
-PORTAgent() {
-	toilet -t -f $toiletfont "Installing and running Portainer Agent"
-	docker network create \
-	--driver overlay \
-	  portainer_agent_network
-
-	docker service create \
-	  --name portainer_agent \
-	  --network portainer_agent_network \
-	  -p 9001:9001/tcp \
-	  --mode global \
-	  --constraint 'node.platform.os == linux' \
-	  --mount type=bind,src=//var/run/docker.sock,dst=/var/run/docker.sock \
-	  --mount type=bind,src=//var/lib/docker/volumes,dst=/var/lib/docker/volumes \
-	  portainer/agent:2.14.2
-}
-
-# PORTinstall() {
-# 	docker pull portainer/portainer
-# 	docker volumecreate portainer_data
-# 	PORTrun
-# }
 
 # Diff 2 HTML
 # Finds the difference between 2 files, and creates a file to easily view them.
