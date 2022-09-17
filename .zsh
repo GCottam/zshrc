@@ -32,8 +32,6 @@ RCCopy() {
 	cd ~
 	cp -uvr .zsh/.config/ ./
 	chmod -R +rwx .zsh/.scripts/
-	cp -uvr .zsh/.scripts/ ./
-	cp -uvr .zsh/.zshrc ~/.zshrc
 }
 
 RCinstall() {
@@ -149,7 +147,7 @@ watch_weather() {
 	watch -c -n 60 "curl http://wttr.in"
 }
 
-alias sysmon='watch -n 0.5 ~/.scripts/sys_status.sh'
+alias sysmon='watch -n 0.5 ~/.zsh/.scripts/sys_status.sh'
 
 
 # Compressed Extractor
