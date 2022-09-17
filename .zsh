@@ -35,12 +35,7 @@ RCCopy() {
 }
 
 RCinstall() {
-	toilet -t -f $toiletfont "Installing ZSHRC"
-	cd ~
-	git clone https://github.com/GlennCottam/zshrc.git .zsh
-  git clone https://github.com/GlennCottam/omz-themes.git .oh-my-zsh/custom/themes/omz-themes
-	RCCopy
-	source .zshrc
+	./install.sh
 }
 
 RCupdate() {
