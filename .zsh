@@ -2,10 +2,10 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Testing For Configs
-echo "Current Distro = " $zsh_distro
-echo "Package Manager = " $pkg_mgr
-echo "Is Root? = " $isroot
-echo "Toilet Font = " $toiletfont
+# echo "Current Distro = " $zsh_distro
+# echo "Package Manager = " $pkg_mgr
+# echo "Is Root? = " $isroot
+# echo "Toilet Font = " $toiletfont
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
