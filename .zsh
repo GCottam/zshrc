@@ -1,13 +1,11 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-# Config
-bashrc=".zshrc"
-isroot="sudo"
-pkg_mgr="apt"
-toiletfont="smmono9"
-
+# Testing For Configs
 echo "Current Distro = " $zsh_distro
+echo "Package Manager = " $pkg_mgr
+echo "Is Root? = " $isroot
+echo "Toilet Font = " $toiletfont
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -25,8 +23,7 @@ source $ZSH/oh-my-zsh.sh
 
 
 # Programs
-
-alias reload='source ~/${bashrc}'
+alias reload='source ~/.zshrc'
 
 RCCopy() {
 	cd ~
@@ -226,7 +223,7 @@ alias rmr='rm -r'
 alias update='$isroot $pkg_mgr update && $isroot $pkg_mgr upgrade -y && RCupdate'
 alias py='clear && python3'
 alias back='cd ..'
-alias home='cd ~/ && clear && source $bashrc'
+alias home='cd ~/ && clear && reload'
 alias svim='$isroot vim'
 alias ppa='$isroot add-apt-repository'
 alias root='$isroot -i'
@@ -245,6 +242,15 @@ alias service_enabled='$isroot systemctl list-unit-files --type=service --state=
 
 # Toilet Info
 alias toilet_fonts='ls /usr/share/figlet'
+
+# Distro Dependant Alias'
+
+if [[ pkg_mgr -eq "dnf" ]]
+then
+    alias update='$isroot dnf upgrade -y && RCupdate'
+else [[ pkg_mgr -eq "apt" ]]
+    alias update='$isroot apt update && $isroot apt upgrade -y && RCupdate'
+fi
 
 # Dependencies
 # - Lynx
