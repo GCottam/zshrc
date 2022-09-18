@@ -245,10 +245,10 @@ alias toilet_fonts='ls /usr/share/figlet'
 
 # Distro Dependant Alias'
 
-if [[ $pkg_mgr -eq "dnf" ]]
+if [[ $pkg_mgr = "dnf" ]]
 then
     alias update='$isroot dnf upgrade -y && RCupdate'
-else [[ $pkg_mgr -eq "apt" ]]
+else [[ $pkg_mgr = "apt" ]]
     alias update='$isroot apt update && $isroot apt upgrade -y && RCupdate'
 fi
 
