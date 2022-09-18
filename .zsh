@@ -188,7 +188,7 @@ export LESS_TERMCAP_us=$'\E[01;32m'
 #netinfo - shows network information for your system
 netinfo ()
 {
-toilet -t -f $toiletfont "--------------- Network Information ---------------"
+"--------------- Network Information ---------------"
 /sbin/ifconfig | awk /'inet addr/ {print $2}'
 /sbin/ifconfig | awk /'Bcast/ {print $3}'
 /sbin/ifconfig | awk /'inet addr/ {print $4}'
@@ -196,7 +196,7 @@ toilet -t -f $toiletfont "--------------- Network Information ---------------"
 ifconfig | grep inet
 myip=`lynx -dump -hiddenlinks=ignore -nolist http://checkip.dyndns.org:8245/ | sed '/^$/d; s/^[ ]*//g; s/[ ]*$//g' `
 echo "${myip}"
-toilet -t -f $toiletfont "---------------------------------------------------"
+"---------------------------------------------------"
 }
 
 #dirsize - finds directory sizes and lists them for the current directory
