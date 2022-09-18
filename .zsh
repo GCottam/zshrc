@@ -38,6 +38,15 @@ RCinstall() {
 	./install.sh
 }
 
+RCuninstall() {
+  
+  read -q VARIN\?"This will remove all configuration files assiociated with ZSHRC. Press any key to continue!"
+
+  rm -rv ~/.zsh
+  rm -rv ~/.oh-my-zsh/custom/themes/omz-themes
+
+}
+
 RCupdate() {
 	toilet -t -f $toiletfont "Updating ZSHRC"
 	cd ~/.zsh/
