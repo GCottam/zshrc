@@ -3,6 +3,8 @@ echo "Cloning ZSH Repo"
 git clone https://github.com/GlennCottam/zshrc.git .zsh
 git clone https://github.com/GlennCottam/omz-themes.git .oh-my-zsh/custom/themes/omz-themes
 
+source .zsh/.zsh
+
 RCCopy
 cp .zsh/.zshrc ~
 source .zshrc
