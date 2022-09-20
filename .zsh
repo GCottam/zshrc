@@ -48,6 +48,8 @@ RCupdate() {
 	toilet -t -f $toiletfont "Updating ZSHRC"
 	cd ~/.zsh/
 	git pull origin main
+	cd ~/.oh-my-zsh/custom/themes/omz-themes
+	git pull origin main
 	RCCopy
 	reload
 }
