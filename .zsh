@@ -260,7 +260,7 @@ then
     alias update='$isroot apt update && $isroot apt upgrade -y && RCupdate'
 elif [[ $pkg_mgr = "brew" ]]
 then
-    	alias update='brew update && brew upgrade -y && RCupdate'
+    	alias update='brew update && brew upgrade && RCupdate'
 fi
 
 # Dependencies
