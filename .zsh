@@ -259,7 +259,8 @@ elif [[ $pkg_mgr = "apt" ]]
     alias update='$isroot apt update && $isroot apt upgrade -y && RCupdate'
 then
 elif [[ $pkg_mgr = "brew" ]]
-    alias update='brew update && brew upgrade -y && RCupdate'
+	echo "Homebrew Package Manager Selected"
+    	alias update='brew update && brew upgrade -y && RCupdate'
 then
 fi
 
