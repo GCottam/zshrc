@@ -255,12 +255,12 @@ alias toilet_fonts='ls /usr/share/figlet'
 if [[ $pkg_mgr = "dnf" ]]
 then
     alias update='$isroot dnf upgrade -y && RCupdate'
-else [[ $pkg_mgr = "apt" ]]
-then
+elif [[ $pkg_mgr = "apt" ]]
     alias update='$isroot apt update && $isroot apt upgrade -y && RCupdate'
-else [[ $pkg_mgr = "brew" ]]
 then
+elif [[ $pkg_mgr = "brew" ]]
     alias update='brew update && brew upgrade -y && RCupdate'
+then
 fi
 
 # Dependencies
