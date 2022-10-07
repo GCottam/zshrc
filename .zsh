@@ -256,12 +256,11 @@ if [[ $pkg_mgr = "dnf" ]]
 then
     alias update='$isroot dnf upgrade -y && RCupdate'
 elif [[ $pkg_mgr = "apt" ]]
+then
     alias update='$isroot apt update && $isroot apt upgrade -y && RCupdate'
-then
 elif [[ $pkg_mgr = "brew" ]]
-	echo "Homebrew Package Manager Selected"
-    	alias update='brew update && brew upgrade -y && RCupdate'
 then
+    	alias update='brew update && brew upgrade -y && RCupdate'
 fi
 
 # Dependencies
