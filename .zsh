@@ -51,7 +51,6 @@ RCupdate() {
 	
 	RCupdateThemes	
 	RCCopy
-	reload
 }
 
 RCupdateThemes() {
