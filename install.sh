@@ -6,7 +6,7 @@ echo "Installing OH-MY-ZSH"
 sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 echo "Cloning ZSH Themes"
-git clone https://github.com/$git_user:$git_key/omz-themes.git ~/.oh-my-zsh/custom/themes/omz-themes
+git clone https://github.com/GlennCottam/omz-themes.git ~/.oh-my-zsh/custom/themes/omz-themes
 
 http://username:password@domain/path
 
