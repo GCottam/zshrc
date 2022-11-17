@@ -8,8 +8,6 @@ sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools
 echo "Cloning ZSH Themes"
 git clone https://github.com/GlennCottam/omz-themes.git ~/.oh-my-zsh/custom/themes/omz-themes
 
-http://username:password@domain/path
-
 source .zsh/.zsh
 
 RCCopy
