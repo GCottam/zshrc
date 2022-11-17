@@ -58,6 +58,7 @@ RCupdateThemes() {
 	toilet -t -f $toiletfont "Updating Zshrc Themes"
 	cd ~/.oh-my-zsh/custom/themes/omz-themes
 	git pull https://$git_user:$git_key@github.com/$git_user/omz-themes.git
+	reload
 }
 
 RCreset() {
