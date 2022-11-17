@@ -49,9 +49,7 @@ RCupdate() {
 	cd ~/.zsh/
 	git pull origin main
 	
-	cd ~/.oh-my-zsh/custom/themes/omz-themes
-	git pull origin main
-	
+	RCupdateThemes	
 	RCCopy
 	reload
 }
@@ -59,7 +57,7 @@ RCupdate() {
 RCupdateThemes() {
 	toilet -t -f $toiletfont "Updating Zshrc Themes"
 	cd ~/.oh-my-zsh/custom/themes/omz-themes
-	git pull origin main
+	git pull git pull https://$git_user:$git_key@github.com/$git_user/omz-themes.git
 }
 
 RCreset() {
