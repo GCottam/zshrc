@@ -258,7 +258,7 @@ then
     alias update='$isroot dnf upgrade -y && RCupdate'
 elif [[ $pkg_mgr = "apt" ]]
 then
-    alias update='$isroot apt update && $isroot apt upgrade -y && RCupdate'
+    alias update='$isroot apt update && $isroot apt upgrade -y && $isroot apt autoremove && RCupdate'
 elif [[ $pkg_mgr = "brew" ]]
 then
     	alias update='brew update && brew upgrade && RCupdate'
