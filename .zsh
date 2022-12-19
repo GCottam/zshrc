@@ -248,6 +248,8 @@ alias service_enable='$isroot systemctl enable --now'
 alias service_status='$isroot systemctl list-unit-files --type=service'
 alias service_enabled='$isroot systemctl list-unit-files --type=service --state=enabled'
 
+alias monitor='bashtop'
+
 # Toilet Info
 alias toilet_fonts='ls /usr/share/figlet'
 
