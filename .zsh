@@ -264,6 +264,9 @@ then
 elif [[ $pkg_mgr = "brew" ]]
 then
     	alias update='brew update && brew upgrade && RCupdate'
+elif [[ $pkg_mgr = "yum" ]]
+then
+    	alias update='yum update -y && RCupdate'
 fi
 
 # Dependencies
