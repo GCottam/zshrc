@@ -323,6 +323,8 @@ Update() {
 	  # if no package manager is found, display an error message
 	  echo "Error: No package manager found on this system."
 	fi
+	
+	RCupdate
 }
 
 # Dependencies
