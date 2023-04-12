@@ -14,7 +14,7 @@ zstyle ':omz:update' mode auto
 plugins=(git)
 
 # Programs
-alias reload='source ~/.zshrc'
+alias reload='clear && source ~/.zshrc'
 
 RCCopy() {
     cd ~
