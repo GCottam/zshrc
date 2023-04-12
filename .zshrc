@@ -5,8 +5,8 @@ export toiletfont="smmono9"
 export git_user=""
 export git_key=""
 
-# source ~/.zsh/.zsh
-source .zsh
+source ~/.zsh/.zsh
+# source .zsh
 
 # -------- ZSH Config --------
 # Path to your oh-my-zsh installation.
