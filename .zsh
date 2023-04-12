@@ -26,10 +26,19 @@ source $ZSH/oh-my-zsh.sh
 alias reload='source ~/.zshrc'
 
 RCCopy() {
-	cd ~
-	cp -uvr .zsh/.config/ ./
-	chmod -R +rwx .zsh/.scripts/
+    cd ~
+    
+    if [[ "$(uname)" == "Darwin" ]]; then
+        # macOS
+        rsync -avh --update --progress .zsh/.config/ ./
+    else
+        # Other systems (Linux, etc.)
+        cp -uvr .zsh/.config/ ./
+    fi
+    
+    chmod -R +rwx .zsh/.scripts/
 }
+
 
 RCinstall() {
 	./install.sh
