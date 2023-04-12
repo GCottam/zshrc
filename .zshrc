@@ -1,5 +1,5 @@
-export zsh_distro="fedora"
-export pkg_mgr="dnf"
+export zsh_distro=""
+export pkg_mgr=""
 export isroot="sudo"        
 export toiletfont="smmono9"
 export git_user=""
