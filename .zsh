@@ -10,7 +10,7 @@
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 # ZSH Theme
-ZSH_THEME="omz-themes/dank-agnoster"
+ZSH_THEME="omz-themes/work-monkey"
 
 # Auto Update:
 zstyle ':omz:update' mode auto
