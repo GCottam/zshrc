@@ -335,11 +335,6 @@ Update() {
 # - Lolcat
 # - aha
 
-# Startup Applications
-toilet -t -f future $USER@$HOST
-screenfetch
-
-
 # Fonts:
 # ascii12.tlf     bigascii9.tlf  circle.tlf   future.tlf  mono9.tlf      smascii9.tlf   smmono12.tlf
 # ascii9.tlf      bigmono12.tlf  emboss.tlf   letter.tlf  pagga.tlf      smblock.tlf    smmono9.tlf
