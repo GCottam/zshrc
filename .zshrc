@@ -17,3 +17,7 @@ ZSH_THEME="omz-themes/dank-agnoster"
 
 # Source oh-my-zsh
 source $ZSH/oh-my-zsh.sh
+
+# Startup Applications
+toilet -t -f future $USER@$HOST
+screenfetch
