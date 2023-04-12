@@ -7,20 +7,11 @@
 # echo "Is Root? = " $isroot
 # echo "Toilet Font = " $toiletfont
 
-# Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
-# ZSH Theme
-ZSH_THEME="omz-themes/dank-agnoster"
-
 # Auto Update:
 zstyle ':omz:update' mode auto
 
 # Plugins
 plugins=(git)
-
-# Source oh-my-zsh
-source $ZSH/oh-my-zsh.sh
-
 
 # Programs
 alias reload='source ~/.zshrc'
