@@ -235,6 +235,7 @@ export LS_COLORS=$LS_COLORS:"*.wmv=01;35":"*.wma=01;35":"*.flv=01;35":"*.m4a=01;
 # Alias' have been created for Ubuntu / Debian
 # The proper packages will need to be installed for some to work
 #Alias'
+alias h="cd ~"
 alias ls='ls -la'
 alias rmr='rm -r'
 alias update='$isroot $pkg_mgr update && $isroot $pkg_mgr upgrade -y && RCupdate'
