@@ -45,7 +45,8 @@ RCuninstall() {
 }
 
 RCupdate() {
-	toilet -t -f $toiletfont "Updating ZSHRC"
+
+	echo "Updating ZSHRC"
 	cd ~/.zsh/
 	git pull origin main
 	
@@ -54,14 +55,14 @@ RCupdate() {
 }
 
 RCupdateThemes() {
-	toilet -t -f $toiletfont "Updating Zshrc Themes"
+	echo "Updating Zshrc Themes"
 	cd ~/.oh-my-zsh/custom/themes/omz-themes
 	git pull https://$git_user:$git_key@github.com/$git_user/omz-themes.git
 	reload
 }
 
 RCreset() {
-	toilet -t -f $toiletfont "Resetting ZSHRC to git version"
+	ehco "Resetting ZSHRC to git version"
 	cd ~/.zsh/
 	git reset --hard HEAD
 	RCCopy
@@ -71,7 +72,7 @@ RCreset() {
 
 # Portianer script
 PORTrun() {
-	toilet -t -f $toiletfont "Running Portainer"
+	echo"Running Portainer"
 	docker run -d -p 8000:8000 -p 9443:9443 --name portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce:latest
 	docker ps
 }
@@ -80,20 +81,20 @@ PORTrun() {
 # Diff 2 HTML
 # Finds the difference between 2 files, and creates a file to easily view them.
 diff2html() {
-	toilet -t -f $toiletfont "DIFF2HTML..."
+	ehco "DIFF2HTML..."
 	echo "Finding Differences between $1, and $2"
 	diff --color=always -y $1 $2 | aha --black --title "DIFF $1, $2" > diff.html
 }
 
 # Traceroute: NMAP must be installed
 traceroute() {
-	toilet -t -f $toiletfont "Running Traceroute on: $1"
+	echo "Running Traceroute on: $1"
 	sudo nmap -sn --traceroute $1
 }
 
 # Stupid little hack program I made (does nothing)
 hack() {
-  toilet -t -f $toiletfont "Starting Hack..."
+  echo "Starting Hack..."
   sleep 1
   while [ 1 -eq 1 ]
   do
@@ -103,13 +104,13 @@ hack() {
 }
 
 installOMZ() {
-	toilet -t -f $toiletfont "Installing Oh-My-ZSH"
+	echo "Installing Oh-My-ZSH"
 	sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 }
 
 # Service Adjustment
 ServiceRestart() {
-	toilet -t -f $toiletfont "Restarting Service $1"
+	echo "Restarting Service $1"
 	$isroot service $1 restart && $isroot service status
 }
 
@@ -130,7 +131,7 @@ toiletExport() {
 
 # Lists open ports of current machine
 ListOpenPorts() {
-	toilet -t -f $toiletfont "Open Ports"
+	echo "Open Ports"
 	netstat -lntu
 }
 
