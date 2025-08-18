@@ -30,6 +30,10 @@ RCCopy() {
     chmod -R +rwx .zsh/.scripts/
 }
 
+Pingy() {
+	ping $1 -i 0.01 -s 6144
+}
+
 
 RCinstall() {
 	./install.sh
@@ -87,10 +91,10 @@ diff2html() {
 }
 
 # Traceroute: NMAP must be installed
-traceroute() {
-	echo "Running Traceroute on: $1"
-	sudo nmap -sn --traceroute $1
-}
+#traceroute() {
+#	echo "Running Traceroute on: $1"
+#	sudo nmap -sn --traceroute $1 $2
+#}
 
 # Stupid little hack program I made (does nothing)
 hack() {
@@ -182,6 +186,11 @@ extract () {
   else
     echo "'$1' is not a valid file!"
   fi
+}
+
+# Compress using 7ZIP
+compress() {
+	7z a $1 $2 -mx=9
 }
 
 # Easy Read Man Pages
